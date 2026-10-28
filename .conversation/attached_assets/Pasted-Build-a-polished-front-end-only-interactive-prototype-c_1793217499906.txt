@@ -1,0 +1,65 @@
+Build a polished, front-end-only interactive prototype called "Confiance", a B2B SaaS platform that helps South African brands keep customers by building trust. Use React + Vite + React Router + Tailwind CSS + Recharts + lucide-react + framer-motion. No backend: use seeded mock data and shared in-memory React state (Context) so an action in one view updates the others live. Show a small "Simulated demo data. All names are fictional." badge in the footer of each view.
+
+CONCEPT
+Customer Loyalty = (Convenience + Price) x Trust, where Trust is built by Service Quality, Support and Transparency. Tagline: "Loyalty is built on trust." Brands run anonymous audits using creators, publish a live transparency log, monitor social media for public outcry with an AI agent, and give customers a community portal. Creators are one trusted channel, not the only one.
+
+SOUTH AFRICAN CONTEXT
+- Currency in Rand (R). Locations: Sandton, Rosebank, Midrand, Pretoria (Menlyn), Durban (Umhlanga), Cape Town (V&A Waterfront), Gqeberha, Bloemfontein. Use real SA malls and cities as locations only.
+- Demo brand (fictional): "Mzansi Mart", an online and in-store grocery and lifestyle retailer. Other fictional stores for variety: Shaya Electronics, Kasi Kicks, Karoo Home & Living, Jozi Fresh Meals. Do NOT use real store or brand names.
+- Fictional creators (invented, any resemblance to real people is coincidental): Thando M. (@thando.tries, lifestyle, Joburg), Aisha P. (@aisha.reviews, tech, Durban), Lwazi D. (@lwazi_unboxed, unboxing, Soweto), Chantel V. (@chantelcooks, food, Pretoria), Sipho N. (@sipho_fitcheck, fashion, Cape Town), Naledi K. (@naledi.daily, vlogs, Gqeberha).
+- Realistic SA incident causes: load-shedding delaying the warehouse, courier delays in peak season, hidden delivery fees at checkout, failed payments, WhatsApp support going unanswered.
+- Light SA flavour in microcopy (customer and creator views only): "Howzit", "Sharp", "Lekker", "Eish". Keep it tasteful.
+- Compliance notes in UI: creators show a "#Ad / Disclosed partner" badge in line with the ARB advertising code, and a POPIA note: "Virtual cards and aliases are encrypted and recycled after each audit."
+
+THREE COMPLETELY DIFFERENT EXPERIENCES
+Start at a landing page ("/") with the Confiance logo (shield with a check mark), tagline and three large cards: Brand Dashboard, Creator Hub, Customer App. Each opens its own route with its own layout, fonts, colours and navigation. They must NOT share a sidebar or look alike. A small floating "Demo switcher" pill (bottom corner) lets the presenter jump between views and has a "Reset demo" button.
+
+1) BRAND DASHBOARD (/brand): professional, data-dense, desktop-first
+- Style: calm and corporate. Font DM Sans. Dark navy sidebar (#14181f), off-white page (#f6f3ec), white cards, orange accent (#e8743b), blue data colour (#2f6fb0 / #6fa8e0), green success (#8fd0a8). Rounded-2xl cards, soft shadows.
+- Sidebar: Overview, Social Outcry Radar, QA Audits, Transparency Log, Status Tiers, How it works.
+- Top bar: page title, notification bell with live count, avatar ("Operations Manager, Mzansi Mart").
+- Overview: 4 KPI cards (Trust Score 0-100, Churn Deflection Index %, Organic UGC Velocity videos/month, Repeat Purchase Rate %) with trend arrows. Charts: Trust Score line over 12 weeks; "Why customers leave" horizontal bar (Poor service 47%, Delivery or hidden costs 54%, Low trust, Weak support); cohort retention area chart, Control vs Confiance over 90 days; donut of tickets resolved by Trust Council peers vs staff. Show context: "Average net loss per new customer: R520".
+- SOCIAL OUTCRY RADAR (the main selling point, make it prominent):
+  * An "AI Trust Agent (simulated)" panel with a pulsing live indicator that says "Scanning TikTok, X, Instagram, Facebook, Reddit... " and a last-scan timestamp.
+  * Top row: Public Sentiment gauge, "Trust at risk" score, Active outcries count, Reach in the last 24h.
+  * A live trending feed of outcry cards: platform icon, topic cluster (e.g. "Delivery delays in Gauteng", "Hidden delivery fee at checkout", "Unanswered WhatsApp support"), mentions per hour sparkline, estimated reach, sentiment, risk chip (Low / Medium / Critical), predicted Trust Score drop (e.g. -6 pts if unaddressed), and 2 synthetic sample posts clearly marked "synthetic example".
+  * City hotspot bar chart (Johannesburg, Cape Town, Durban, Pretoria, Gqeberha).
+  * Clicking a card opens a right-side drawer with the AI-recommended response playbook in 4 steps: 1) Acknowledge publicly via the Transparency Log, 2) Assign an operations owner, 3) Launch a verification audit with creators, 4) Notify affected customers. Include buttons: "Draft public response" (opens a modal with an AI-style draft message the user can edit), "Create incident in Transparency Log", "Launch verification audit", "Assign owner".
+  * A "Simulate viral outcry" button adds a new Critical card with a rising mentions graph, a toast alert and a bell notification. New simulated outcries also appear every ~30 seconds, at most 3 at a time.
+  * Status flow per outcry: Detected, Acknowledged, Fix in progress, Verified, Contained. When contained, the Trust Score recovers with an animated counter.
+- QA Audits: "Launch Delivery Audit" modal (audit type: Checkout fees, Delivery speed, Support response; city; number of creators; credit amount in Rand). Active Audits table with status chips (Pending, In progress, Issue flagged, Fixed, Verified).
+- Transparency Log: public-style timeline with incident title, root cause (e.g. "Load-shedding at the Midrand warehouse"), status, remediation steps, and a "Log a fix" button.
+- Status Tiers: tier ladder (Bronze, Silver, Gold, Guide) with non-monetary rewards (early access, voting rights, recognition).
+- How it works: the animated equation (Service Quality + Support + Transparency, then arrow to Trust, multiplied by Convenience + Price, giving Loyalty), a Trust slider (0-100%) driving a loyalty gauge with caption "Conceptual model. In practice trust declines gradually", and the 5-step shopper journey (Buy, Delivery, Problem, Recovery, Stay) showing the risk and the Confiance feature at each step.
+
+2) CREATOR HUB (/creator): looks like a TikTok/Instagram-style creator app
+- Render inside a centered phone frame on desktop, full-screen on mobile. NO sidebar. Bottom tab bar (Missions, Reports, Broadcast, Profile).
+- Style: dark, bold and energetic. Font Space Grotesk. Near-black background (#0b0b12) with a purple-to-pink-to-orange gradient accent, glassmorphism cards, neon glow on active elements, big rounded pills, animated gradient borders, smooth swipe-style card transitions.
+- Header: creator avatar, handle, a green "#Ad Disclosed partner" badge, an XP level bar, a streak counter and a credits wallet in Rand.
+- Missions: story-style vertical cards for audit assignments ("Order a basket from Mzansi Mart: Sandton delivery test", reward R350 credit + XP). Accept button with a confetti burst.
+- After accepting: the Anonymous Audit Toolkit shown as a glowing virtual card graphic (last 4 digits only) plus a generated burner alias and address, with an "Auto-recycled after audit" note. Add a gamified step tracker (Order placed, In transit, Delivered, Support test) with progress animations.
+- "Report privately to Ops" flow: category chips, a voice-note style notes box, mock screenshot upload, and a "Send securely" button that creates an "Issue flagged" item in the Brand Dashboard.
+- When the brand logs a fix, a pulsing "Verify and endorse" card appears. Tapping it opens a Co-Host Broadcast preview styled like a social post ("Verified fix, shared with followers") and marks the audit Verified, with an XP reward animation.
+- Honesty note: "Findings are reported honestly, positive or negative."
+- Include a leaderboard of the fictional creators.
+
+3) CUSTOMER APP (/customer): looks like a friendly community and loyalty app
+- Render inside a centered phone frame on desktop. NO sidebar. Bottom nav (Home, Spotlight, Community, Vote, Rewards). Feed-style layout.
+- Style: warm, lively and inclusive, completely different from the other two. Font Poppins. Cream background (#fff8ee), sunset gradient accents (orange #f26b3a to gold #f5b83d), deep teal (#0f6b6b) and warm coral, rounded-3xl cards, playful emoji, sticker-style badges, soft illustrated shapes. Smooth micro-interactions and confetti on milestones.
+- Home: "Howzit, Lindiwe 👋" greeting, tier card with a progress bar to the next tier that starts pre-filled at 20%, a live "Trust Board" card showing the brand's open issues and fixes with friendly status badges, and a "What's new" story row.
+- Spotlight: UGC feed styled like short video cards with likes. "Scan packaging QR" opens a mock camera and upload sheet. Uploaded clips appear at the top of the feed and earn points.
+- Community (Trust Councils): a chat-style WhatsApp-like community where Community Guides answer questions, with a Guide badge, "Helpful" votes and points earned.
+- Vote: Co-creation polls (e.g. "Which new Mzansi Mart pack should we launch?") with live bar results after voting and a "your vote counts" animation.
+- Rewards: status perks only (early access, voting rights, recognition), no discounts, with a badge collection.
+
+DEMO FLOW (must work end to end, with toasts and live updates across the three views)
+1. Brand: press "Simulate viral outcry" in the Radar (e.g. "Delivery delays in Gauteng"), and the Trust Score shows a predicted drop.
+2. Brand: open the outcry, run the playbook: create a Transparency Log incident, then launch a verification audit.
+3. Creator: a new mission appears. Accept it, complete it, and report the issue privately.
+4. Brand: the issue shows as "Issue flagged". Log a fix publicly in the Transparency Log.
+5. Creator: tap "Verify and endorse", which creates the co-host broadcast.
+6. Customer: the Trust Board shows the fix and the customer earns points.
+7. Brand: the outcry moves to "Contained" and the Trust Score recovers with an animated counter.
+
+QUALITY BAR
+Clean component structure with separate theme tokens per view, reusable Modal, Toast, Drawer and Badge components, accessible contrast and focus states, loading skeletons on first render, empty states, and smooth page transitions. Make each view feel like a different product made by the same company.
