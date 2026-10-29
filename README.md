@@ -5,8 +5,7 @@
 Confiance is a B2B SaaS prototype that helps South African brands keep customers when competitors are only one click away. It builds trust across the whole customer experience through anonymous quality audits, a live transparency log, an AI social media outcry radar and a customer community portal.
 
 > Built for Credify Systems, Customer Loyalty challenge.
-> **Live demo:** https://confiance-trust-platform--olwethumabena.replit.app | **Pitch deck:** [add link] | **Documentation:** [add link]
-
+> **Live demo:** https://confiance-trust-platform--olwethumabena.replit.app 
 ---
 
 ## The problem
@@ -97,4 +96,4 @@ Then open the local URL shown in the terminal. If you use Replit, press **Run**.
 
 ## Author
 
-Olwethu Mabena. Honours in IT (Security and Network Engineering). [Add contact or LinkedIn]
+Olwethu Mabena. Honours in IT (Security and Network Engineering). 
