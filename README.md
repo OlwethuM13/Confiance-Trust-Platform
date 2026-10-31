@@ -1,5 +1,13 @@
 # Confiance
 
+## AI-Use & Development Disclosure
+This project was conceptualized, architected, and driven entirely by Olwethu Mabena. 
+To optimize engineering velocity during this hackathon sprint, an LLM AI assistant(Replit) was 
+utilized as a development collaborator to assist with boilerplate React/Vite layout generation, 
+Framer-Motion animation parameters, and initial documentation formatting. All underlying 
+system logic, the Trust Multiplier Equation, and strategic South African regulatory integrations 
+(POPIA/ARB) represent my own original intellectual property.
+
 **Loyalty is built on trust.**
 
 Confiance is a B2B SaaS prototype that helps South African brands keep customers when competitors are only one click away. It builds trust across the whole customer experience through anonymous quality audits, a live transparency log, an AI social media outcry radar and a customer community portal.
